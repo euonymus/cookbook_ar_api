@@ -1,7 +1,9 @@
 name             'ar_api'
-maintainer       'YOUR_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'euonymus'
+maintainer_email 'euonymus0220@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures ar_api'
 long_description 'Installs/Configures ar_api'
 version          '0.1.0'
+
+depends 'apache2'
