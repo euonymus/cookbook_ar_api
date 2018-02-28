@@ -8,6 +8,9 @@ ServerName <%= @params[:server_name] %>
   RewriteCond %{HTTP:Authorization} ^(.*)
   RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 
+  WSGIDaemonProcess <%= @params[:name] %> python-path=<%= @params[:docroot] %> python-home=<%= @params[:docroot] %>/.env
+  WSGIScriptAlias / <%= @params[:docroot] %>/adapter.wsgi process-group=<%= @params[:name] %> application-group=%{GLOBAL}
+
   <Directory <%= @params[:docroot] %>>
     Options FollowSymLinks
     AllowOverride All
