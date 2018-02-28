@@ -8,3 +8,4 @@
 #
 
 include_recipe 'ar_api::apache'
+include_recipe 'ar_api::ar_api'
