@@ -1,7 +1,7 @@
 ServerName <%= @params[:server_name] %>
 
 <VirtualHost *:80>
-  DocumentRoot <%= @params[:docroot] %>
+  DocumentRoot <%= @params[:docroot] %>/static
   ServerName <%= @params[:server_name] %>
 
   RewriteEngine On
@@ -11,7 +11,7 @@ ServerName <%= @params[:server_name] %>
   WSGIDaemonProcess <%= @params[:name] %> python-path=<%= @params[:docroot] %> python-home=<%= @params[:docroot] %>/.env
   WSGIScriptAlias / <%= @params[:docroot] %>/adapter.wsgi process-group=<%= @params[:name] %> application-group=%{GLOBAL}
 
-  <Directory <%= @params[:docroot] %>>
+  <Directory <%= @params[:docroot] %>/static>
     Options FollowSymLinks
     AllowOverride All
     Order allow,deny
